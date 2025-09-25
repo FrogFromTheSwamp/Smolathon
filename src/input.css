@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Sans+Narrow&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import "tailwindcss";
+
+
+
+@theme {
+    /* ------------------- COLORS ------------------- */
+    /* -------- PRIMARY -------- */
+    --color-primaryDark: #365512;
+    --color-primary: #5E8534;
+    --color-primaryLight: #6BAB2A;
+    --color-primaryLighter: #C5E38D;
+    --color-primaryLightest: rgba(199, 227, 148, 0.5);
+
+    /* -------- SECONDARY -------- */
+    --color-secondaryDark: #B7880B;
+    --color-secondary: #FDE008;
+    --color-secondaryLight: #efd647;
+    --color-secondaryLighter: rgba(242, 234, 146, 0.3);
+    --color-secondaryLighterFull:#f2ea92;
+    --color-secondaryLightest: #FBFAF3;
+    
+
+    /* -------- FONT -------- */
+    --font-sofia: "Sofia Sans Extra Condensed", sans-serif;
+    --font-narrow: "PT Sans Narrow", sans-serif;
+}

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/137af2dcfa.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body class="bg-secondaryLightest">
+    <div class="shadow-lg/30 shadow-primaryDark rounded-b-[2rem] bg-secondaryLighter mb-15 md:rounded-b-[5rem] md:h-screen">
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Your Company</span>
+                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="#mainNews" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Главное</a>
+                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Проекты</a>
+                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Сервисы</a>
+                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Услуги</a>
+                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Контакты</a>
+                </div>
+            </nav>
+            <el-dialog>
+                <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                    <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-secondaryLighterFull p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                            <div class="flex items-center justify-between">
+                                <a href="#" class="-m-1.5 p-1.5">
+                                    <span class="sr-only">Your Company</span>
+                                    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
+                                </a>
+                                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                    <span class="sr-only">Close menu</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="-my-6 divide-y divide-gray-500/10">
+                                    <div class="space-y-2 py-6">
+                                        <a href="#mainNews" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Главное</a>
+                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Проекты</a>
+                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Сервисы</a>
+                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Услуги</a>
+                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Контакты</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </el-dialog-panel>
+                    </div>
+                </dialog>
+            </el-dialog>
+        </header>
+
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+                <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr  from-primaryLight to-secondaryLighter opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+            </div>
+            <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-40 lg:max-w-7xl">
+                <div class="text-left">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl">Центр организации дорожного движения</h1>
+                    <p class="mt-8 text-lg font-medium text-pretty text-primaryDark sm:text-xl/8 md:mt-12 md:text-2xl/8">Улучшаем дорожную ситуацию, развиваем инфраструктуру и применяем информационные технологии</p>
+                </div>
+            </div>
+            <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+                <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" 
+                class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-primary to-secondaryLighter opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+            </div>
+        </div>
+    </div>
+
+        <!--------------------------------------------------------- NEWS------------------------------------------------->
+    <div class="mb-10 md:mb-20 md:mt-25">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto mt-2  max-w-7xl md:mb-5 lg:mx-0">
+                <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Последние новости</h2>
+                <p class="mt-2 text-md font-medium text-pretty text-primaryDark sm:text-xl/8 md:mt-4 md:text-3xl/8">Будьте в курсе самых важных событий вместе с нами</p>
+            </div>
+            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-5 pt-5 justify-items-center lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-2 lg:gap-y-8">
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between md:p-6">
+                    <div class="relative group grow rounded-lg bg-secondaryLight p-3 shadow-md md:p-6 ">
+                        <time datetime="2025-09-20" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">20.09.2025</time>
+                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark group-hover:text-gray-600 sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                    В 2 раза быстрее водители могут съезжать с М9 "Балтия" на внешний МКАД благодаря переразметке ЦОДД...
+                            </a>
+                        </h3>
+                        <div class="flex gap-1 flex-wrap">
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">ОДД</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">МКАД</a><br>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">М9 "Балтия"</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between w-full p-3 md:pt-6">
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">Читать дальше</p>
+                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8"></i></a>
+                    </div>
+                </article>
+
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-primaryLighter flex  max-w-7xl flex-col items-start justify-between md:p-6">
+                    <div class="relative group grow rounded-lg bg-primaryLight p-3 shadow-md md:p-6 ">
+                        <time datetime="2025-09-21" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-primaryLighter sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">21.09.2025</time>
+                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-secondaryLightest group-hover:text-gray-600 sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                    27 сентября будет временно закрыто движение на внешней стороне Садового кольца...
+                            </a>
+                        </h3>
+                        <div class="flex gap-1 flex-wrap">
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-primaryLighter sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">Московский мотофестиваль</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-primaryLighter sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">Садовое кольцо</a><br>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-primaryLighter sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">Перекрытия</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between w-full p-3 md:pt-6 ">
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">Читать дальше</p>
+                        <i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8"></i>
+                    </div>
+                </article>
+
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-secondaryLighterFull flex  max-w-7xl flex-col items-start justify-between  md:p-6">
+                    <div class="relative group grow rounded-lg bg-secondaryLight p-3 shadow-md md:p-6 ">
+                        <time datetime="2025-09-27" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">27.09.2025</time>
+                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark group-hover:text-gray-600 sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
+                            <a href="#">
+                                <span class="absolute inset-0"></span>
+                                    В 2 раза быстрее водители могут съезжать с М9 "Балтия" на внешний МКАД благодаря переразметке ЦОДД...
+                            </a>
+                        </h3>
+                        <div class="flex gap-1 flex-wrap">
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">ОДД</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">МКАД</a><br>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">М9 "Балтия"</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between w-full p-3 md:pt-6">
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">Читать дальше</p>
+                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8"></i></a>
+                    </div>
+                </article>
+                
+                <div class="w-full shadow-md rounded-xl p-2 bg-primary max-w-7xl lg:col-start-2 ">
+                    <p class="text-xl text-center font-sofia font-medium text-secondaryLightest sm:text-2xl md:text-5xl lg:text-4xl"><a>Читать больше новостей</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------------------------------------- DOCUMENTS------------------------------------------------->
+
+    <div class="mb-10 md:mb-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl lg:mx-0">
+                <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:mb-5 sm:text-7xl lg:text-6xl">Документы</h2>
+                <h3 class="mt-2 text-md font-medium text-pretty text-primaryDark sm:text-xl/8 md:mt-12 md:text-3xl/8 lg:text-2xl/8">
+                    Чтобы Вы были уверены в каждом этапе работы, мы собрали все необходимые документы в одном месте
+                </h3>
+            </div>
+            <div class="mx-auto flex max-w-7xl w-full pt-5 justify-center sm:mt-1 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 pb-3 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between w-full md:p-6">
+                    <div class="relative group grow rounded-lg bg-secondaryLight p-3 max-w-7xl w-full md:p-5">
+                        <h3 class="font-sofia font-bold text-lg text-primaryDark rounded-t-xl px-3 py-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto z-10 bg-secondaryLighterFull hover:bg-secondaryLight sm:text-2xl md:text-5xl lg:text-4xl"><a href="">Все документы</a></h3>
+                        <div class="mb-3 flex px-3 gap-2 justify-between flex-wrap md:mb-15 lg:mb-10">
+                            <a href="#" class="shadow-sm shadow-gray-400 relative w-full z-10 text-center rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">Устав</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">ИНН</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">ОГРН</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">Памятка о коррупции</a><br>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------------------------------------- ABOUT US ------------------------------------------------->
+    <div class="mb-2 md:mb-4">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl lg:mx-0">
+                <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Главное</h2>
+            </div>
+            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-6 mt-5 justify-items-center sm:mt-5 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:content-start">
+                <article class="shadow-md rounded-xl p-3 bg-secondaryLighterFull flex w-full max-w-7xl flex-col items-start justify-between md:p-6 ">
+                    <div class="flex items-start justify-between w-full">
+                        <img src="img/about-us-1.jpg" alt="Road traffic" class="shadow-md w-full h-15 object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg sm:h-30 lg:h-50">
+                    </div>
+                    <div class="group relative grow my-6 px-1">
+                        <h3 class="mb-0.5 text-2xl font-sofia font-extrabold text-primaryDark sm:text-4xl md:text-6xl lg:mb-3 lg:text-5xl">
+                            Как ЦОДД помогает городу? 
+                        </h3>
+                        <p class="text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">Улучшаем дорожную ситуацию, развиваем инфраструктуру и применяем информационные технологии</p>
+                    </div>
+                    <div class="flex items-center justify-between w-full ">
+                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLighterFull rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl">
+                            Узнать больше
+                        </h3>
+                    </div>
+                </article>
+
+                <article class="shadow-md rounded-xl p-3 bg-primaryLighter flex w-full max-w-7xl flex-col items-start justify-between md:p-6 ">
+                    <div class="flex items-center justify-between w-full">
+                        <img src="img/about-us-2.jpg" alt="Road traffic" class="shadow-md w-full h-15 object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg sm:h-30 lg:h-50">
+                    </div>
+                    <div class="group relative grow my-6 px-1">
+                        <h3 class="mb-0.5 text-2xl font-sofia font-extrabold text-primaryDark sm:text-4xl md:text-6xl lg:mb-3 lg:text-5xl">
+                            Открытые вакансии ЦОДД 
+                        </h3>
+                        <p class="text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">Стань частью команды: мы делаем Смоленск комфортнее и безопаснее более 25 лет</p>
+                    </div>
+                    <div class="flex items-center justify-between w-full">
+                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLightest rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl">
+                            Узнать больше
+                        </h3>
+                    </div>
+                </article>
+
+                <article class="shadow-md rounded-xl p-3 bg-secondaryLighterFull w-full flex max-w-7xl flex-col items-start justify-between md:p-6 ">
+                    <div class="flex items-center justify-between w-full">
+                        <img src="img/about-us-3.jpg" alt="Road traffic" class="shadow-md w-full h-15 object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg sm:h-30 lg:h-50">
+                    </div>
+                    <div class="group relative grow my-6 px-1">
+                        <h3 class="mb-0.5 text-2xl font-sofia font-extrabold text-primaryDark sm:text-4xl md:text-6xl lg:mb-3 lg:text-5xl">
+                            Наша команда
+                        </h3>
+                        <p class="text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">У нас одна цель - сделать наш город лучше, дороги - безопаснее, передвижение - комфортнее</p>
+                    </div>
+                    <div class="flex items-center justify-between w-full">
+                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLighterFull rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl">
+                            Узнать больше
+                        </h3>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------- ПРАВИТЕЛЬСТВО СМОЛЕНСКА------------------------------------------------->
+
+    <div class="mb-10 md:mb-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto grid  grid-cols-1 gap-x-8 gap-y-6 pt-5 sm:mt-1 sm:pt-16">
+                <article class="shadow-sm rounded-xl pt-1 pr-3 pl-3 pb-3 bg-primaryLighter flex  flex-col items-start justify-between md:pt-2 md:pr-5 md:pl-5 md:pb-5 lg:p-10">
+                    <div class="flex items-center justify-center w-full ">
+                        <img src="img/admin-Smolensk.jpg" alt="Road traffic" class="w-full h-4/5 object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg lg:hidden">
+                        
+                    </div>
+                    <div class="relative group grow rounded-lg bg-primary p-3 w-full md:p-6">
+                        <h3 class="font-sofia font-bold text-lg text-primaryDark rounded-t-xl px-3 py-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto bg-primaryLighter hover:bg-primary hover:text-secondaryLightest sm:text-2xl sm:py-2 md:text-5xl lg:text-4xl"><a href="">Ознакомиться</a></h3>
+                        <h3 class="mb-5 text-xl text-center font-sofia font-bold text-secondaryLightest sm:text-3xl md:text-6xl lg:text-5xl">
+                                    Сайт правительства Смоленской области
+                        </h3>
+                        <p class="text-lg text-left font-sofia font-medium text-secondaryLightest sm:text-2xl md:text-5xl md:mt-8 lg:text-4xl">Летопись смоленской области</p>
+                        <div class="mb-3 w-30 h-[1px] bg-secondaryLightest z-10 rounded-bl-full sm:w-45 md:w-65 md:mb-5"></div>
+
+                        <p class="text-lg text-left font-sofia font-medium text-secondaryLightest sm:text-2xl md:text-5xl lg:text-4xl">Информация об органах власти</p>
+                        <div class="mb-3 w-30 h-[1px] bg-secondaryLightest z-10 rounded-bl-full sm:w-45 md:w-65 md:mb-5"></div>
+
+                        <p class="text-lg text-left font-sofia font-medium text-secondaryLightest sm:text-2xl md:text-5xl lg:text-4xl" >Лента новостей</p>
+                        <div class="mb-3 w-30 h-[1px] bg-secondaryLightest z-10 rounded-bl-full sm:w-45 md:w-65 md:mb-5"></div>
+
+                        <p class="text-lg text-left font-sofia font-medium text-secondaryLightest sm:text-2xl md:text-5xl lg:text-4xl">Много полезной и важной информации</p>
+                        <div class="mb-10 w-30 h-[1px] bg-secondaryLightest z-10 rounded-bl-full sm:w-45 sm:mb-15 md:w-65 md:mb-25"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------------------------------------------- GOSUSLUGI ------------------------------------------------->
+    <div class="mb-10 md:mb-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mb-10">
+                <div class="relative w-full max-w-xl mx-auto flex justify-start items-center rounded-xl">
+                    <img src="img/Gosulugi.jpg" alt="Gosulugi computer" class="w-full h-auto object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg"/>
+                </div>
+                <div class="mx-auto max-w-7xl w-full my-5 lg:mx-0 sm:mb-1 lg:mb-3">
+                    <h2 class="text-3xl text-center font-extrabold tracking-tight text-balance text-primary font-sofia sm:text-5xl md:text-7xl lg:text-6xl">Почему электронные штрафы это удобно и просто?</h2>
+                </div>
+            </div>
+
+            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-10 mt-1 justify-items-center lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <article class="shadow-md rounded-xl p-3 w-full relative bg-primaryLight flex max-w-7xl flex-col items-start justify-between">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primaryDark text-secondaryLightest w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:text-2xl md:text-5xl md:w-15 md:h-15 lg:text-4xl">
+                        <p>1</p>
+                    </div>
+                    <div class="flex w-full justify-center flex-col group relative grow my-1 px-1 md:my-7">
+                        <h3 class="text-2xl font-sofia font-extrabold text-center text-secondaryLightest sm:text-3xl md:text-5xl lg:text-4xl">
+                            Выгодно
+                        </h3>
+                        <p class="text-md font-narrow font-medium text-center text-secondaryLightest sm:text-xl md:text-3xl lg:text-2xl">Можно оплатить штраф со скидкой до 25%</p>
+                    </div>
+                </article>
+                <article class="shadow-md rounded-xl p-3 w-full relative bg-secondaryLight flex max-w-7xl flex-col items-start justify-between">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-secondaryDark text-secondaryLightest w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:text-2xl md:text-5xl md:w-15 md:h-15 lg:text-4xl">
+                        <p>2</p>
+                    </div>
+                    <div class="flex w-full justify-center flex-col group relative grow my-1 px-1 md:my-7">
+                        <h3 class="text-2xl font-sofia font-extrabold text-center text-primaryDark sm:text-3xl md:text-5xl lg:text-4xl">
+                            Удобно
+                        </h3>
+                        <p class="text-md font-narrow font-medium text-center text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">В электронном письме будет ссылка для оплаты</p>
+                    </div>
+                </article>
+                <article class="shadow-md rounded-xl p-3 w-full relative bg-primaryLight flex max-w-7xl flex-col items-start justify-between">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primaryDark text-secondaryLightest w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:text-2xl md:text-5xl md:w-15 md:h-15 lg:text-4xl">
+                        <p>3</p>
+                    </div>
+                    <div class="flex w-full justify-center flex-col group relative grow my-1 px-1 md:my-7">
+                        <h3 class="text-2xl font-sofia font-extrabold text-center text-secondaryLightest sm:text-3xl md:text-5xl lg:text-4xl">
+                            Быстро
+                        </h3>
+                        <p class="text-md font-narrow font-medium text-center text-secondaryLightest sm:text-xl md:text-3xl lg:text-2xl">Уведомления о штрафах приходят в тот же день</p>
+                    </div>
+                </article>
+                <article class="shadow-md rounded-xl p-3 w-full relative bg-secondaryLight flex max-w-7xl flex-col items-start justify-between">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-secondaryDark text-secondaryLightest w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:text-2xl md:text-5xl md:w-15 md:h-15 lg:text-4xl">
+                        <p>4</p>
+                    </div>
+                    <div class="flex w-full justify-center flex-col group relative grow my-1 px-1 md:my-7">
+                        <h3 class="text-2xl font-sofia font-extrabold text-center text-primaryDark sm:text-3xl md:text-5xl lg:text-4xl">
+                            Надежно
+                        </h3>
+                        <p class="text-md font-narrow font-medium text-center text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">Вы не пропустите письмо, если поменяете место жительства</p>
+                    </div>
+                </article>
+                <article class="shadow-md rounded-xl p-3 w-full relative bg-primaryLight flex max-w-7xl flex-col items-start justify-between">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primaryDark text-secondaryLightest w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:text-2xl md:text-5xl md:w-15 md:h-15 lg:text-4xl">
+                        <p>5</p>
+                    </div>
+                    <div class="flex w-full justify-center flex-col group relative grow my-1 px-1 md:my-7">
+                        <h3 class="text-2xl font-sofia font-extrabold text-center text-secondaryLightest sm:text-3xl md:text-5xl lg:text-4xl">
+                            Безопасно
+                        </h3>
+                        <p class="text-md font-narrow font-medium text-center text-secondaryLightest sm:text-xl md:text-3xl lg:text-2xl">Данные передаются по защищенным каналам</p>
+                    </div>
+                </article>
+                <article class="shadow-md rounded-xl p-3 w-full relative bg-secondaryLight flex max-w-7xl flex-col items-start justify-between">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-secondaryDark text-secondaryLightest w-10 h-10 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:text-2xl md:text-5xl md:w-15 md:h-15 lg:text-4xl">
+                        <p>6</p>
+                    </div>
+                    <div class="flex w-full justify-center flex-col group relative grow my-1 px-1 md:my-7">
+                        <h3 class="text-2xl font-sofia font-extrabold text-center text-primaryDark sm:text-3xl md:text-5xl lg:text-4xl">
+                            Экологично
+                        </h3>
+                        <p class="text-md font-narrow font-medium text-center text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">Экономия бумаги, сохранение лесов, сокращение отходов</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div> 
+
+    <!--------------------------------------------------------- PROJECTS ------------------------------------------------->
+    <div class="mb-10 md:mb-20">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mb-4 mx-auto max-w-7xl lg:mx-0">
+                <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Проекты</h2>
+            </div>
+            <div class="mx-auto grid justify-items-center max-w-7xl grid-cols-1 gap-x-8 gap-y-6 sm:mt-10 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-primaryLighter flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3">
+                    <div class="relative rounded-lg bg-primaryLight p-3 md:p-6">
+                        <div class="">
+                            <div class="flex items-center justify-between absolute top-0 left-0 z-10 w-1/2 h-2/5 bg-primaryLighter rounded-br-3xl p-1 sm:h-3/5 md:h-80 md:p-3 lg:left-1/2 lg:h-70 lg:transform lg:-translate-x-1/2 lg:w-90 lg:rounded-bl-3xl">
+                                <img src="img/progect-1.jpg" alt="Road traffic" class="w-full h-full object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg ">
+                            </div>
+                            <h3 class="font-sofia text-lg font-extrabold text-balance text-secondaryLightest text-left absolute top-0 right-0 w-1/2 h-1/3 pl-2 pt-2 sm:text-3xl md:text-6xl md:pl-5 md:pt-5 lg:text-4xl lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-70 lg:z-899 lg:w-full lg:text-center">Зеленое кольцо</h3>
+                        </div>
+                        <h3 class="mt-20 mb-2 text-md leading-5 text-left font-narrow font-medium text-secondaryLightest sm:mt-45 sm:text-2xl sm:leading-none md:mt-85 md:text-4xl md:mb-5 lg:mb-3 lg:text-2xl">
+                                    Кольцевой маршрут соединяет зелёные зоны, метро, МЦД и МЦК по всему Смоленску. Жители разных районов могут как ездить по делам, так и отдыхать
+                        </h3>
+                    </div>
+
+                    <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
+                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                    </div>
+                </article>
+
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3">
+                    <div class="relative group grow rounded-lg bg-secondaryLight p-3 md:p-6">
+                        <div>
+                            <div class="flex items-center justify-between absolute top-0 left-0 z-10 w-1/2 h-2/5 bg-secondaryLighterFull rounded-br-3xl p-1 sm:h-3/5 md:h-80 md:p-3 lg:left-1/2 lg:h-70 lg:transform lg:-translate-x-1/2 lg:w-90 lg:rounded-bl-3xl">
+                                <img src="img/project-2.jpg" alt="Road traffic" class="w-full h-full object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg">
+                            </div>
+                            <h3 class="font-sofia text-lg font-extrabold text-balance text-primaryDark text-left absolute top-0 right-0 w-1/2 h-1/3 pl-2 pt-2 sm:text-3xl md:text-6xl md:pl-5 md:pt-5 lg:text-4xl lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-70 lg:z-899 lg:w-full lg:text-center">Схема движения грузовиков</h3>
+                        </div>
+                        <h3 class="mt-20 mb-2 text-md leading-5 text-left font-narrow font-medium text-primaryDark group-hover:text-gray-600 sm:mt-45 sm:text-2xl sm:leading-none md:mt-85 md:text-4xl md:mb-5 lg:mb-3 lg:text-2xl">
+                                    Чтобы сделать Смоленск комфортнее и экологичнее, на территори города реализована инициативы по введению “Грузового каркаса”
+                        </h3>
+                    </div>
+
+                    <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
+                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                    </div>
+                </article>
+
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-primaryLighter flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3">
+                    <div class="relative group grow rounded-lg bg-primaryLight p-3 md:p-6">
+                        <div>
+                            <div class="flex items-center justify-between absolute top-0 left-0 z-10 w-1/2 h-2/5 bg-primaryLighter rounded-br-3xl p-1 sm:h-3/5 md:h-80 md:p-3 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-90 lg:rounded-bl-3xl lg:h-70">
+                                <img src="img/project-3.jpg" alt="Road traffic" class="w-full h-full object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg">
+                            </div>
+                            <h3 class="font-sofia text-lg font-extrabold text-balance text-secondaryLightest text-left absolute top-0 right-0 w-1/2 h-1/3 pl-2 pt-2 sm:text-3xl md:text-6xl md:pl-5 md:pt-5 lg:text-4xl lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-70 lg:z-899 lg:w-full lg:text-center">Портал о велокультуре</h3>
+                        </div>
+                        <h3 class="mt-20 mb-2 text-md leading-5 text-left font-narrow font-medium text-secondaryLightest sm:mt-45 sm:text-2xl sm:leading-none md:mt-85 md:text-4xl md:mb-5 lg:mt-95 lg:mb-3 lg:text-2xl">
+                                    Проект для велосипедистов, курьеров и всех, кто хочет ездить по городу на велосипеде, но не знает, с чего начать
+                        </h3>
+                    </div>
+
+                    <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
+                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                    </div>
+                </article>
+
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3">
+                    <div class="relative group grow rounded-lg bg-secondaryLight p-3 md:p-6">
+                        <div>
+                            <div class="flex items-center justify-between absolute top-0 left-0 z-10 w-1/2 h-2/5 bg-secondaryLighterFull rounded-br-3xl p-1 sm:h-3/5 md:h-80 md:p-3 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:h-70 lg:w-90 lg:rounded-bl-3xl">
+                                <img src="img/project-4.jpg" alt="Road traffic" class="w-full h-full object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg">
+                            </div>
+                            <h3 class="font-sofia text-lg font-extrabold text-balance text-primaryDark text-left absolute top-0 right-0 w-1/2 h-1/3 pl-2 pt-2 sm:text-3xl md:text-6xl md:pl-5 md:pt-5 lg:text-4xl lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-70 lg:z-899 lg:w-full lg:text-center">Иновационный центр “Безопасный транспорт”</h3>
+                        </div>
+                        <h3 class="mt-20 mb-2 text-md leading-5 text-left font-narrow font-medium text-primaryDark group-hover:text-gray-600 sm:mt-45 sm:text-2xl sm:leading-none md:mt-85 md:text-4xl md:mb-5 lg:mt-95 lg:mb-3 lg:text-2xl">
+                                    За все годы работы Инновационного центра было реализовано более 130 масштабных проектов, направленных на безопасность и комфорт
+                        </h3>
+                    </div>
+
+                    <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
+                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                    </div>
+                </article>
+            </div> 
+        </div> 
+    </div>  
+    
+    <!--------------------------------------------------------- SERVICES ------------------------------------------------->
+
+    <div class="mb-7 md:mb-12">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl mb-5 lg:mx-0">
+                <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-5xl">Сервисы</h2>
+            </div>
+            <div class="mx-auto grid justify-items-center max-w-7xl grid-cols-1 gap-x-8 gap-y-6 sm:mt-10 lg:mx-0 lg:max-w-none lg:grid-cols-1">
+                <article class="shadow-md rounded-xl p-3 bg-primaryLighter flex max-w-7l flex-col items-start justify-between  sm:p-6">
+                    <div class="group relative grow my-2 mb-6 px-1 lg:px-5">
+                        <h3 class="mb-1 text-2xl font-sofia text-center font-extrabold text-primaryDark sm:text-5xl md:text-7xl md:mb-5 lg:text-5xl">
+                            Оперативный вызов эвакуатора
+                        </h3>
+                        <p class="text-md font-narrow text-center font-medium text-primaryDark sm:text-xl md:text-4xl lg:text-2xl">Главное — не волнуйтесь. <br>    
+                            Вызвать эвакуатор через нас — просто и надежно. <br>Мы работаем круглосуточно, чтобы вы могли быть уверены: помощь придет вовремя, куда бы ни занесла вас дорога.</p>
+                    </div>
+                    <div class="w-full grid max-w-7xl grid-cols-1 gap-x-8 gap-y-8 mt-1 sm:mt-1 sm:pt-16 md:gap-y-15 lg:mx-0 lg:max-w-none lg:grid-cols-1 lg:pt-5 lg:gap-y-10">
+                        <article class="shadow-md rounded-xl p-1 relative bg-primaryLight flex max-w-7xl flex-col items-start justify-between">
+                            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primaryDark text-secondaryLightest w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:h-10 sm:w-10 md:h-20 md:w-20 md:-top-10 lg:h-10 lg:w-10 lg:-top-6">
+                                <i class="fa-regular fa-clock text-secondaryLightest text-lg sm:text-2xl md:text-4xl lg:text-2xl"></i>
+                            </div>
+                            <div class="group relative grow my-1 px-1 w-full max-w-7xl md:mt-9 md:mb-7 lg:my-3 lg:mx-2">
+                                <h3 class="text-xl font-sofia font-medium text-center text-secondaryLightest sm:text-3xl md:text-5xl lg:text-3xl">
+                                    Скорость и доступность
+                                </h3>
+                            </div>
+                        </article>
+                        <article class="shadow-md rounded-xl p-1 relative bg-primaryLight flex max-w-7xl flex-col items-start justify-between">
+                            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primaryDark text-secondaryLightest w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold z-10 shadow-md sm:h-10 sm:w-10 md:h-20 md:w-20 md:-top-10 lg:h-10 lg:w-10 lg:-top-6">
+                                <i class="fa-regular fa-thumbs-up text-secondaryLightest text-lg sm:text-2xl md:text-4xl lg:text-2xl"></i>
+                            </div>
+                            <div class="group relative grow my-1 px-1 w-full md:mt-9 md:mb-7 lg:my-3 lg:mx-2">
+                                <h3 class="text-xl font-sofia font-medium text-center text-secondaryLightest sm:text-3xl md:text-5xl lg:text-3xl">
+                                    Круглосуточность и безопасность
+                                </h3>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="mx-auto w-full mt-8 shadow-md rounded-xl p-1 bg-primaryDark max-w-xl sm:mt-8 md:mt-12">
+                        <p class="text-xl text-center font-sofia font-medium text-secondaryLightest sm:text-3xl md:text-5xl lg:text-3xl"><a>
+                            Воспользоваться
+                        </a></p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------- CARD ------------------------------------------------->
+
+    <div class="isolate border-3 max-w-4xl border-primaryLight rounded-4xl p-1 mx-2 mb-10 sm:py-20 lg:px-1 lg:py-10 lg:mx-auto">
+        <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+            <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-primaryDark to-primaryLightest opacity-30 sm:left-[calc(50%-40rem)] sm:w-288.75"></div>
+        </div>
+        <div class="mx-auto max-w-2xl text-center">
+            <h2 class="text-3xl font-extrabold font-sofia tracking-tight text-balance text-primaryDark sm:text-5xl md:text-7xl lg:text-6xl">Вызвать эвакуатор</h2>
+            <p class="mt-2 text-lg/6 font-narrow text-primaryDark sm:text-2xl/6 md:text-4xl/9 lg:text-3xl/9">Мы уже готовы помочь!<br>Оставьте свои контакты и местонахождение — и мы свяжемся с вами в течение пары минут, чтобы уточнить детали и направить помощь.</p>
+        </div>
+        <form action="#" method="POST" class="mx-auto mt-10 max-w-xl sm:mt-15">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                <div>
+                    <label for="first-name" class="block text-xl/6 font-semibold text-primaryDark font-sofia sm:text-2xl/6 md:text-5xl/8 lg:text-3xl/8">Ваше имя</label>
+                    <div class="mt-2.5">
+                        <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-primaryDark outline-1 -outline-offset-1 outline-primary placeholder:text-primaryDark focus:outline-2 focus:-outline-offset-2 focus:outline-primaryDark" />
+                    </div>
+                </div>
+                <div>
+                    <label for="last-name" class="block text-xl/6 font-sofia font-semibold text-primaryDark sm:text-2xl/6 md:text-3xl/8 lg:text4xl/8">Ваша фамилия</label>
+                    <div class="mt-2.5">
+                        <input id="last-name" type="text" name="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-primaryDark outline-1 -outline-offset-1 outline-primary placeholder:text-primaryDark focus:outline-2 focus:-outline-offset-2 focus:outline-primaryDark" />
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="phone-number" class="block text-xl/6 font-sofia font-semibold text-primaryDark sm:text-2xl/6 md:text-3xl/8 lg:text4xl/8">Номер телефона</label>
+                    <div class="mt-2.5">
+                        <div class="flex rounded-md bg-white outline-1 -outline-offset-1 outline-primary has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-primary">
+                            <div class="grid shrink-0 grid-cols-1 focus-within:relative">
+                                <select id="country" name="country" autocomplete="country" aria-label="Country" class="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-primaryDark placeholder:text-pr focus:outline-2 focus:-outline-offset-2 focus:outline-primaryLight sm:text-sm/6 md:text-lg/6">
+                                    <option>US</option>
+                                    <option>CA</option>
+                                    <option>EU</option>
+                                    <option>RU</option>
+                                </select>
+                                <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-primaryDark sm:size-4">
+                                    <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input id="phone-number" type="text" name="phone-number" placeholder="123-456-7890" class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-primaryDark placeholder:text-primaryDark focus:outline-none sm:text-sm/6" />
+                        </div>
+                    </div>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block text-xl/6 font-sofia font-semibold text-primaryDark sm:text-2xl/6 md:text-5xl/8 lg:text-3xl/8">Адрес</label>
+                    <div class="mt-2.5">
+                        <textarea id="message" name="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-primary placeholder:text-primaryDark focus:outline-2 focus:-outline-offset-2 focus:outline-primaryDark"></textarea>
+                    </div>
+                </div>
+                <div class="flex gap-x-4 sm:col-span-2">
+                    <div class="flex h-6 items-center">
+                        <div class="group relative inline-flex w-8 shrink-0 rounded-full bg-green-50 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-primaryLighter transition-colors duration-200 ease-in-out has-checked:bg-primaryLighter has-focus-visible:outline-2">
+                            <span class="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
+                            <input id="agree-to-policies" type="checkbox" name="agree-to-policies" aria-label="Agree to policies" class="absolute inset-0 appearance-none focus:outline-hidden" />
+                        </div>
+                    </div>
+                    <label for="agree-to-policies" class="text-md/6 text-primaryDark font-narrow sm:text-xl/6 md:text-3xl/8 lg:text-2xl/8">
+                        Отправляя свои личные данные, вы соглашаетесь с
+                        <a href="#" class="font-semibold whitespace-nowrap text-primaryDark hover:text-primary">политикой конфиденциальности</a>.
+                    </label>
+                </div>
+            </div>
+        <div class="mt-10">
+            <button type="submit" class="block w-full rounded-md bg-primaryDark font-sofia px-3.5 py-2.5 text-center text-xl font-semibold text-white shadow-xs hover:bg-primaryLight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryLight sm:text-3xl md:text-5xl lg:text-4xl lg:p-2">Отправить</button>
+        </div>
+    </form>
+    </div>
+    
+     <!--------------------------------------------------------- FOOTER ------------------------------------------------->
+    <div class="mx-auto">
+        <div class="mx-auto max-w-7xl mb-6 pl-4 sm:mb-10 md:mb-12">
+            <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Контакты</h2>
+        </div>
+        <div class="mx-auto px-6 pb-10 pt-10 bg-secondaryLighterFull w-full rounded-t-4xl shadow-md shadow-primaryDark lg:px-8">
+            <div class="mx-auto max-w-7xl mb-3 md:mb-8">
+                <h2 class="text-xl font-bold tracking-tight text-balance text-primaryDark font-sofia sm:text-3xl md:text-5xl md:mb-3 lg:text-4xl">Директор</h2>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofia sm:text-2xl md:text-4xl lg:text-3xl">Гильденков Андрей Михайлович</h3>
+            </div>
+            <div class="mx-auto max-w-7xl mb-3 md:mb-5">
+                <h2 class="text-xl font-bold tracking-tight text-balance text-primaryDark font-sofia sm:text-3xl md:text-5xl md:mb-3 lg:text-4xl">Приёмная</h2>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofia sm:text-2xl md:text-4xl md:mb-3 lg:text-3xl">+7 (4812) 33 - 99 - 69</h3>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofia mb-1 sm:text-2xl md:text-4xl md:mb-3 lg:text-3xl">г. Смоленск, ул. Большая Краснофлотская, д. 70</h3>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofial sm:text-xl md:text-3xl md:mb-3 lg:text-2xl">Пн- Чт 08:00 - 17:00 Пт 08:00 - 15:00</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
