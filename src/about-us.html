@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/137af2dcfa.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body class="bg-secondaryLightest">
+    <div class="shadow-lg/30 shadow-primaryDark rounded-b-[2rem] bg-secondaryLighter mb-15 md:rounded-b-[5rem] md:h-screen">
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="index.html#about-us" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Главное</a>
+                    <a href="index.html#news" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Новости</a>
+                    <a href="index.html#projects" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Проекты</a>
+                    <a href="index.html#services" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Услуги</a>
+                    <a href="index.html#contact" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Контакты</a>
+                </div>
+            </nav>
+            <el-dialog>
+                <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                    <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                        <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-secondaryLighterFull p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                            <div class="flex items-center justify-between">
+                                <a href="#" class="-m-1.5 p-1.5">
+                                    <span class="sr-only">Your Company</span>
+                                    <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
+                                </a>
+                                <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="-my-6 divide-y divide-gray-500/10">
+                                    <div class="space-y-2 py-6">
+                                        <a href="index.html#about-us" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Главное</a>
+                                        <a href="index.html#news" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Новости</a>
+                                        <a href="index.html#projects" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Проекты</a>
+                                        <a href="index.html#services" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Услуги</a>
+                                        <a href="index.html#contacts" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Контакты</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </el-dialog-panel>
+                    </div>
+                </dialog>
+            </el-dialog>
+        </header>
+        <!--------------------------------------------------------- HEADER------------------------------------------------->
+
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+                <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr  from-primaryLight to-secondaryLighter opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+            </div>
+            <div class="mx-auto max-w-3xl py-32 sm:py-48 lg:py-40 lg:max-w-7xl">
+                <div class="text-left">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl">Цели ЦОДД</h1>
+                    <p class="mt-8 text-lg font-medium text-pretty text-primaryDark sm:text-xl/8 md:mt-12 md:text-2xl/8">Улучшаем дорожную ситуацию, развиваем инфраструктуру и применяем информационные технологии</p>
+                </div>
+            </div>
+            <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+                <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" 
+                class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-primary to-secondaryLighter opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+            </div>
+        </div>
+    </div>
+
+        <!--------------------------------------------------------- NEWS------------------------------------------------->
+
+
+     <!--------------------------------------------------------- FOOTER ------------------------------------------------->
+    <div class="mx-auto" id="contact">
+        <div class="mx-auto px-6 pb-10 pt-10 bg-secondaryLighterFull w-full rounded-t-4xl shadow-md shadow-primaryDark lg:px-8">
+            <div class="mx-auto max-w-7xl mb-3 md:mb-8">
+                <h2 class="text-xl font-bold tracking-tight text-balance text-primaryDark font-sofia sm:text-3xl md:text-5xl md:mb-3 lg:text-4xl">Директор</h2>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofia sm:text-2xl md:text-4xl lg:text-3xl">Гильденков Андрей Михайлович</h3>
+            </div>
+            <div class="mx-auto max-w-7xl mb-3 md:mb-5">
+                <h2 class="text-xl font-bold tracking-tight text-balance text-primaryDark font-sofia sm:text-3xl md:text-5xl md:mb-3 lg:text-4xl">Приёмная</h2>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofia sm:text-2xl md:text-4xl md:mb-3 lg:text-3xl">+7 (4812) 33 - 99 - 69</h3>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofia mb-1 sm:text-2xl md:text-4xl md:mb-3 lg:text-3xl">г. Смоленск, ул. Большая Краснофлотская, д. 70</h3>
+                <h3 class="text-lg font-normal  text-balance text-primaryDark font-sofial sm:text-xl md:text-3xl md:mb-3 lg:text-2xl">Пн- Чт 08:00 - 17:00 Пт 08:00 - 15:00</h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

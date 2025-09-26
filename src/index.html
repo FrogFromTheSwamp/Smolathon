@@ -13,7 +13,6 @@
             <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
-                        <span class="sr-only">Your Company</span>
                         <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
                     </a>
                 </div>
@@ -26,11 +25,11 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a href="#mainNews" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Главное</a>
-                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Проекты</a>
-                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Сервисы</a>
-                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Услуги</a>
-                    <a href="#" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Контакты</a>
+                    <a href="index.html#about-us" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Главное</a>
+                    <a href="index.html#news" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Новости</a>
+                    <a href="index.html#projects" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Проекты</a>
+                    <a href="index.html#services" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Услуги</a>
+                    <a href="index.html#contact" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Контакты</a>
                 </div>
             </nav>
             <el-dialog>
@@ -43,7 +42,6 @@
                                     <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
                                 </a>
                                 <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                                    <span class="sr-only">Close menu</span>
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
                                         <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
@@ -52,11 +50,11 @@
                             <div class="mt-6 flow-root">
                                 <div class="-my-6 divide-y divide-gray-500/10">
                                     <div class="space-y-2 py-6">
-                                        <a href="#mainNews" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Главное</a>
-                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Проекты</a>
-                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Сервисы</a>
-                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Услуги</a>
-                                        <a href="#" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Контакты</a>
+                                        <a href="index.html#about-us" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Главное</a>
+                                        <a href="index.html#news" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Новости</a>
+                                        <a href="index.html#projects" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Проекты</a>
+                                        <a href="index.html#services" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Услуги</a>
+                                        <a href="index.html#contacts" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Контакты</a>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +82,7 @@
     </div>
 
         <!--------------------------------------------------------- NEWS------------------------------------------------->
-    <div class="mb-10 md:mb-20 md:mt-25">
+    <div class="mb-10 md:mb-20 md:mt-25" id="news">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto mt-2  max-w-7xl md:mb-5 lg:mx-0">
                 <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Последние новости</h2>
@@ -94,7 +92,7 @@
                 <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between md:p-6">
                     <div class="relative group grow rounded-lg bg-secondaryLight p-3 shadow-md md:p-6 ">
                         <time datetime="2025-09-20" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">20.09.2025</time>
-                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark group-hover:text-gray-600 sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
+                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
                             <a href="#">
                                 <span class="absolute inset-0"></span>
                                     В 2 раза быстрее водители могут съезжать с М9 "Балтия" на внешний МКАД благодаря переразметке ЦОДД...
@@ -107,8 +105,8 @@
                         </div>
                     </div>
                     <div class="flex items-center justify-between w-full p-3 md:pt-6">
-                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">Читать дальше</p>
-                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8"></i></a>
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"><a href="news1.html">Читать дальше</a></p>
+                        <a href="news1.html"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"></i></a>
                     </div>
                 </article>
 
@@ -128,8 +126,8 @@
                         </div>
                     </div>
                     <div class="flex items-center justify-between w-full p-3 md:pt-6 ">
-                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">Читать дальше</p>
-                        <i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8"></i>
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"><a href="news2.html">Читать дальше</a></p>
+                        <a href="news2.html"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"></i></a>
                     </div>
                 </article>
 
@@ -149,13 +147,13 @@
                         </div>
                     </div>
                     <div class="flex items-center justify-between w-full p-3 md:pt-6">
-                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">Читать дальше</p>
-                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8"></i></a>
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"><a href="news3.html">Читать дальше</a></p>
+                        <a href="news3.html"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"></i></a>
                     </div>
                 </article>
                 
-                <div class="w-full shadow-md rounded-xl p-2 bg-primary max-w-7xl lg:col-start-2 ">
-                    <p class="text-xl text-center font-sofia font-medium text-secondaryLightest sm:text-2xl md:text-5xl lg:text-4xl"><a>Читать больше новостей</a></p>
+                <div class="w-full shadow-md rounded-xl p-2 bg-primary max-w-7xl lg:col-start-2 hover:bg-primaryLight">
+                    <p class="text-xl text-center font-sofia font-medium text-secondaryLightest sm:text-2xl md:text-5xl lg:text-4xl"><a href="news.html">Читать больше новостей</a></p>
                 </div>
 
             </div>
@@ -164,7 +162,7 @@
 
     <!--------------------------------------------------------- DOCUMENTS------------------------------------------------->
 
-    <div class="mb-10 md:mb-20">
+    <div class="mb-10 md:mb-20" id="docs">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-7xl lg:mx-0">
                 <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:mb-5 sm:text-7xl lg:text-6xl">Документы</h2>
@@ -175,12 +173,12 @@
             <div class="mx-auto flex max-w-7xl w-full pt-5 justify-center sm:mt-1 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 pb-3 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between w-full md:p-6">
                     <div class="relative group grow rounded-lg bg-secondaryLight p-3 max-w-7xl w-full md:p-5">
-                        <h3 class="font-sofia font-bold text-lg text-primaryDark rounded-t-xl px-3 py-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto z-10 bg-secondaryLighterFull hover:bg-secondaryLight sm:text-2xl md:text-5xl lg:text-4xl"><a href="">Все документы</a></h3>
+                        <h3 class="font-sofia font-bold text-lg text-primaryDark rounded-t-xl px-3 py-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto z-10 bg-secondaryLighterFull hover:bg-secondaryLight sm:text-2xl md:text-5xl lg:text-4xl"><a href="docs.html">Все документы</a></h3>
                         <div class="mb-3 flex px-3 gap-2 justify-between flex-wrap md:mb-15 lg:mb-10">
-                            <a href="#" class="shadow-sm shadow-gray-400 relative w-full z-10 text-center rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">Устав</a>
-                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">ИНН</a>
-                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">ОГРН</a>
-                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">Памятка о коррупции</a><br>
+                            <a href="docs.html" class="shadow-sm shadow-gray-400 relative w-full z-10 text-center rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">Устав</a>
+                            <a href="docs.html" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">ИНН</a>
+                            <a href="docs.html" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">ОГРН</a>
+                            <a href="docs.html" class="shadow-sm shadow-gray-400 relative z-10 rounded-full w-full text-center font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-4xl lg:text-3xl">Памятка о коррупции</a><br>
                         </div>
                     </div>
                 </article>
@@ -189,7 +187,7 @@
     </div>
 
     <!--------------------------------------------------------- ABOUT US ------------------------------------------------->
-    <div class="mb-2 md:mb-4">
+    <div class="mb-2 md:mb-4" id="about-us">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-7xl lg:mx-0">
                 <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Главное</h2>
@@ -206,8 +204,8 @@
                         <p class="text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">Улучшаем дорожную ситуацию, развиваем инфраструктуру и применяем информационные технологии</p>
                     </div>
                     <div class="flex items-center justify-between w-full ">
-                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLighterFull rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl">
-                            Узнать больше
+                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLighterFull rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl hover:bg-primaryDark hover:text-secondaryLightest">
+                            <a href="about-us.html">Узнать больше</a>
                         </h3>
                     </div>
                 </article>
@@ -223,8 +221,8 @@
                         <p class="text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">Стань частью команды: мы делаем Смоленск комфортнее и безопаснее более 25 лет</p>
                     </div>
                     <div class="flex items-center justify-between w-full">
-                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLightest rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl">
-                            Узнать больше
+                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLightest rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl hover:bg-primaryDark">
+                            <a href="jobs.html">Узнать больше</a>
                         </h3>
                     </div>
                 </article>
@@ -240,8 +238,8 @@
                         <p class="text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">У нас одна цель - сделать наш город лучше, дороги - безопаснее, передвижение - комфортнее</p>
                     </div>
                     <div class="flex items-center justify-between w-full">
-                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLighterFull rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl">
-                            Узнать больше
+                        <h3 class="py-1 text-center w-full text-2xl font-sofia bg-primary font-normal text-secondaryLighterFull rounded-tl-lg rounded-tr-3xl rounded-br-lg rounded-bl-3xl sm:text-3xl md:text-5xl lg:text-4xl hover:bg-primaryDark">
+                            <a href="team.html">Узнать больше</a>
                         </h3>
                     </div>
                 </article>
@@ -259,7 +257,7 @@
                         
                     </div>
                     <div class="relative group grow rounded-lg bg-primary p-3 w-full md:p-6">
-                        <h3 class="font-sofia font-bold text-lg text-primaryDark rounded-t-xl px-3 py-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto bg-primaryLighter hover:bg-primary hover:text-secondaryLightest sm:text-2xl sm:py-2 md:text-5xl lg:text-4xl"><a href="">Ознакомиться</a></h3>
+                        <h3 class="font-sofia font-bold text-lg text-primaryDark rounded-t-xl px-3 py-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto bg-primaryLighter hover:bg-primary hover:text-secondaryLightest sm:text-2xl sm:py-2 md:text-5xl lg:text-4xl"><a href="https://www.admin-smolensk.ru/">Ознакомиться</a></h3>
                         <h3 class="mb-5 text-xl text-center font-sofia font-bold text-secondaryLightest sm:text-3xl md:text-6xl lg:text-5xl">
                                     Сайт правительства Смоленской области
                         </h3>
@@ -364,7 +362,7 @@
     </div> 
 
     <!--------------------------------------------------------- PROJECTS ------------------------------------------------->
-    <div class="mb-10 md:mb-20">
+    <div class="mb-10 md:mb-20" id="projects">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mb-4 mx-auto max-w-7xl lg:mx-0">
                 <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Проекты</h2>
@@ -384,8 +382,8 @@
                     </div>
 
                     <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
-                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
-                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"><a href="https://www.admin-smolensk.ru/">Принять участие</a></p>
+                        <a href="https://www.admin-smolensk.ru/"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"></i></a>
                     </div>
                 </article>
 
@@ -403,8 +401,8 @@
                     </div>
 
                     <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
-                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
-                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"><a href="https://www.admin-smolensk.ru/">Принять участие</a></p>
+                        <a href="https://www.admin-smolensk.ru/"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"></i></a>
                     </div>
                 </article>
 
@@ -422,8 +420,8 @@
                     </div>
 
                     <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
-                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
-                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"><a href="https://www.admin-smolensk.ru/">Принять участие</a></p>
+                        <a href="https://www.admin-smolensk.ru/"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"></i></a>
                     </div>
                 </article>
 
@@ -441,8 +439,8 @@
                     </div>
 
                     <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
-                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl">Принять участие</p>
-                        <a href=""><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl"></i></a>
+                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"><a href="https://www.admin-smolensk.ru/">Принять участие</a></p>
+                        <a href="https://www.admin-smolensk.ru/"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"></i></a>
                     </div>
                 </article>
             </div> 
@@ -451,7 +449,7 @@
     
     <!--------------------------------------------------------- SERVICES ------------------------------------------------->
 
-    <div class="mb-7 md:mb-12">
+    <div class="mb-7 md:mb-12" id="services">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-7xl mb-5 lg:mx-0">
                 <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-5xl">Сервисы</h2>
@@ -487,8 +485,8 @@
                             </div>
                         </article>
                     </div>
-                    <div class="mx-auto w-full mt-8 shadow-md rounded-xl p-1 bg-primaryDark max-w-xl sm:mt-8 md:mt-12">
-                        <p class="text-xl text-center font-sofia font-medium text-secondaryLightest sm:text-3xl md:text-5xl lg:text-3xl"><a>
+                    <div class="mx-auto w-full mt-8 shadow-md rounded-xl p-1 bg-primaryDark max-w-xl sm:mt-8 md:mt-12 hover:bg-primary">
+                        <p class="text-xl text-center font-sofia font-medium text-secondaryLightest sm:text-3xl md:text-5xl lg:text-3xl"><a href="#form">
                             Воспользоваться
                         </a></p>
                     </div>
@@ -498,7 +496,7 @@
     </div>
     <!--------------------------------------------------------- CARD ------------------------------------------------->
 
-    <div class="isolate border-3 max-w-4xl border-primaryLight rounded-4xl p-1 mx-2 mb-10 sm:py-20 lg:px-1 lg:py-10 lg:mx-auto">
+    <div class="isolate border-3 max-w-4xl border-primaryLight rounded-4xl p-5 mx-2 mb-10 sm:py-20 lg:px-1 lg:py-10 lg:mx-auto" id="form">
         <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
             <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-primaryDark to-primaryLightest opacity-30 sm:left-[calc(50%-40rem)] sm:w-288.75"></div>
         </div>
@@ -554,18 +552,18 @@
                     </div>
                     <label for="agree-to-policies" class="text-md/6 text-primaryDark font-narrow sm:text-xl/6 md:text-3xl/8 lg:text-2xl/8">
                         Отправляя свои личные данные, вы соглашаетесь с
-                        <a href="#" class="font-semibold whitespace-nowrap text-primaryDark hover:text-primary">политикой конфиденциальности</a>.
+                        <a href="docs.html" class="font-semibold whitespace-nowrap text-primaryDark hover:text-primary">политикой конфиденциальности</a>.
                     </label>
                 </div>
             </div>
         <div class="mt-10">
-            <button type="submit" class="block w-full rounded-md bg-primaryDark font-sofia px-3.5 py-2.5 text-center text-xl font-semibold text-white shadow-xs hover:bg-primaryLight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryLight sm:text-3xl md:text-5xl lg:text-4xl lg:p-2">Отправить</button>
+            <button type="submit" class="block w-full rounded-md bg-primaryDark font-sofia px-3.5 py-2.5 text-center text-xl font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primaryLight sm:text-3xl md:text-5xl lg:text-4xl lg:p-2">Отправить</button>
         </div>
     </form>
     </div>
     
      <!--------------------------------------------------------- FOOTER ------------------------------------------------->
-    <div class="mx-auto">
+    <div class="mx-auto" id="contact">
         <div class="mx-auto max-w-7xl mb-6 pl-4 sm:mb-10 md:mb-12">
             <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Контакты</h2>
         </div>
