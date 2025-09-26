@@ -6,6 +6,17 @@
     <link href="./output.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/137af2dcfa.js" crossorigin="anonymous"></script>
     <title>Document</title>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/imask"></script>
+    <style>
+        #map { height: 400px; width: 100%; z-index: 1; }
+        .leaflet-attribution-flag {
+            display: none !important; }
+    </style>
 </head>
 <body class="bg-secondaryLightest">
     <div class="shadow-lg/30 shadow-primaryDark rounded-b-[2rem] bg-secondaryLighter mb-15 md:rounded-b-[5rem] md:h-screen">
@@ -29,7 +40,7 @@
                     <a href="index.html#news" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Новости</a>
                     <a href="index.html#projects" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Проекты</a>
                     <a href="index.html#services" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Услуги</a>
-                    <a href="index.html#contact" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Контакты</a>
+                    <a href="contact.html" class="text-2xl font-bold font-narrow text-primaryDark hover:text-primary">Контакты</a>
                 </div>
             </nav>
             <el-dialog>
@@ -54,7 +65,7 @@
                                         <a href="index.html#news" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Новости</a>
                                         <a href="index.html#projects" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Проекты</a>
                                         <a href="index.html#services" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Услуги</a>
-                                        <a href="index.html#contacts" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Контакты</a>
+                                        <a href="contact.html" class="shadow-md -mx-4 block rounded-lg px-3 py-2 text-lg font-bold text-primaryDark hover:bg-secondaryLighter">Контакты</a>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +104,7 @@
                     <div class="relative group grow rounded-lg bg-secondaryLight p-3 shadow-md md:p-6 ">
                         <time datetime="2025-09-20" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">20.09.2025</time>
                         <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
-                            <a href="#">
+                            <a href="news1.html">
                                 <span class="absolute inset-0"></span>
                                     В 2 раза быстрее водители могут съезжать с М9 "Балтия" на внешний МКАД благодаря переразметке ЦОДД...
                             </a>
@@ -113,8 +124,8 @@
                 <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-primaryLighter flex  max-w-7xl flex-col items-start justify-between md:p-6">
                     <div class="relative group grow rounded-lg bg-primaryLight p-3 shadow-md md:p-6 ">
                         <time datetime="2025-09-21" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-primaryLighter sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">21.09.2025</time>
-                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-secondaryLightest group-hover:text-gray-600 sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
-                            <a href="#">
+                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-secondaryLightest sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
+                            <a href="news2.html">
                                 <span class="absolute inset-0"></span>
                                     27 сентября будет временно закрыто движение на внешней стороне Садового кольца...
                             </a>
@@ -134,8 +145,8 @@
                 <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-secondaryLighterFull flex  max-w-7xl flex-col items-start justify-between  md:p-6">
                     <div class="relative group grow rounded-lg bg-secondaryLight p-3 shadow-md md:p-6 ">
                         <time datetime="2025-09-27" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">27.09.2025</time>
-                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark group-hover:text-gray-600 sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
-                            <a href="#">
+                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
+                            <a href="news3.html">
                                 <span class="absolute inset-0"></span>
                                     В 2 раза быстрее водители могут съезжать с М9 "Балтия" на внешний МКАД благодаря переразметке ЦОДД...
                             </a>
@@ -406,7 +417,7 @@
                     </div>
                 </article>
 
-                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-primaryLighter flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3">
+                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-primaryLighter flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3 lg:order-4">
                     <div class="relative group grow rounded-lg bg-primaryLight p-3 md:p-6">
                         <div>
                             <div class="flex items-center justify-between absolute top-0 left-0 z-10 w-1/2 h-2/5 bg-primaryLighter rounded-br-3xl p-1 sm:h-3/5 md:h-80 md:p-3 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-90 lg:rounded-bl-3xl lg:h-70">
@@ -519,28 +530,18 @@
                     </div>
                 </div>
                 <div class="sm:col-span-2">
-                    <label for="phone-number" class="block text-xl/6 font-sofia font-semibold text-primaryDark sm:text-2xl/6 md:text-3xl/8 lg:text4xl/8">Номер телефона</label>
+                    <label for="phone-number" class="block text-xl/6 font-sofia font-semibold text-primaryDark sm:text-2xl/6 md:text-3xl/8 lg:text-4xl/8">Номер телефона</label>
                     <div class="mt-2.5">
-                        <div class="flex rounded-md bg-white outline-1 -outline-offset-1 outline-primary has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-primary">
-                            <div class="grid shrink-0 grid-cols-1 focus-within:relative">
-                                <select id="country" name="country" autocomplete="country" aria-label="Country" class="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-primaryDark placeholder:text-pr focus:outline-2 focus:-outline-offset-2 focus:outline-primaryLight sm:text-sm/6 md:text-lg/6">
-                                    <option>US</option>
-                                    <option>CA</option>
-                                    <option>EU</option>
-                                    <option>RU</option>
-                                </select>
-                                <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-primaryDark sm:size-4">
-                                    <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <input id="phone-number" type="text" name="phone-number" placeholder="123-456-7890" class="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-primaryDark placeholder:text-primaryDark focus:outline-none sm:text-sm/6" />
-                        </div>
+                        <input id="phone-number" type="tel" name="phone-number" placeholder="+7 (___) ___-__-__" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-primaryDark outline-1 -outline-offset-1 outline-primary placeholder:text-primaryDark focus:outline-2 focus:-outline-offset-2 focus:outline-primaryDark" required />
+                        <p id="phone-error" class="mt-1 text-sm text-red-600 hidden">Пожалуйста, введите действительный российский номер телефона.</p>
                     </div>
                 </div>
                 <div class="sm:col-span-2">
-                    <label for="message" class="block text-xl/6 font-sofia font-semibold text-primaryDark sm:text-2xl/6 md:text-5xl/8 lg:text-3xl/8">Адрес</label>
+                    <label for="address" class="block text-xl/6 font-sofia font-semibold text-primaryDark sm:text-2xl/6 md:text-3xl/8 lg:text-4xl/8">Адрес</label>
                     <div class="mt-2.5">
-                        <textarea id="message" name="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-primary placeholder:text-primaryDark focus:outline-2 focus:-outline-offset-2 focus:outline-primaryDark"></textarea>
+                        <div id="map" class="rounded-md"></div>
+                        <input id="address" type="hidden" name="address" />
+                        <p id="address-display" class="mt-2 text-base text-primaryDark"></p>
                     </div>
                 </div>
                 <div class="flex gap-x-4 sm:col-span-2">
@@ -561,12 +562,10 @@
         </div>
     </form>
     </div>
+
     
      <!--------------------------------------------------------- FOOTER ------------------------------------------------->
     <div class="mx-auto" id="contact">
-        <div class="mx-auto max-w-7xl mb-6 pl-4 sm:mb-10 md:mb-12">
-            <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Контакты</h2>
-        </div>
         <div class="mx-auto px-6 pb-10 pt-10 bg-secondaryLighterFull w-full rounded-t-4xl shadow-md shadow-primaryDark lg:px-8">
             <div class="mx-auto max-w-7xl mb-3 md:mb-8">
                 <h2 class="text-xl font-bold tracking-tight text-balance text-primaryDark font-sofia sm:text-3xl md:text-5xl md:mb-3 lg:text-4xl">Директор</h2>
@@ -580,6 +579,79 @@
             </div>
         </div>
     </div>
+    <script>
+        // Ensure DOM is fully loaded before initializing the map
+        document.addEventListener('DOMContentLoaded', () => {
+            // Phone number masking and validation
+            const phoneInput = document.getElementById('phone-number');
+            const phoneError = document.getElementById('phone-error');
+            const mask = IMask(phoneInput, {
+                mask: '+7 (000) 000-00-00'
+            });
 
+            phoneInput.addEventListener('input', () => {
+                const isValid = mask.masked.isComplete;
+                phoneError.classList.toggle('hidden', isValid);
+            });
+
+            // Initialize OpenStreetMap centered on Smolensk
+            const map = L.map('map', {
+                center: [54.7818, 32.0401], // Smolensk coordinates
+                zoom: 12,
+                zoomControl: true,
+                attributionControl: true
+            });
+
+            // Add OSM tile layer with a fallback provider
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19,
+                tileSize: 256,
+                zoomOffset: 0
+            }).addTo(map);
+
+            // Add a draggable marker
+            const marker = L.marker([54.7818, 32.0401], { draggable: true }).addTo(map);
+
+            const addressInput = document.getElementById('address');
+            const addressDisplay = document.getElementById('address-display');
+
+            // Function to update address using Nominatim
+            function updateAddress(lat, lng) {
+                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const address = data.display_name || 'Адрес не найден';
+                        addressDisplay.textContent = address;
+                        addressInput.value = JSON.stringify({ lat, lng, address });
+                    })
+                    .catch(() => {
+                        addressDisplay.textContent = 'Не удалось получить адрес';
+                        addressInput.value = JSON.stringify({ lat, lng });
+                    });
+            }
+
+            // Update address on marker drag
+            marker.on('dragend', () => {
+                const { lat, lng } = marker.getLatLng();
+                updateAddress(lat, lng);
+            });
+
+            // Update address on map click
+            map.on('click', (e) => {
+                const { lat, lng } = e.latlng;
+                marker.setLatLng([lat, lng]);
+                updateAddress(lat, lng);
+            });
+
+            // Force map to redraw after initialization
+            setTimeout(() => {
+                map.invalidateSize();
+            }, 100);
+
+            // Initialize with default location
+            updateAddress(54.7818, 32.0401);
+        });
+    </script>
 </body>
 </html>
