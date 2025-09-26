@@ -2,6 +2,7 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.1.13",
     "@tailwindplus/elements": "^1.0.13",
+    "payload": "^3.57.0",
     "tailwindcss": "^4.1.13"
   }
 }

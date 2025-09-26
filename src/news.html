@@ -89,20 +89,20 @@
             <div class="mx-auto mt-2  max-w-7xl md:mb-5 lg:mx-0">
                 <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Новости за сентябрь 2025 года</h2>
             </div>
-            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-5 pt-5 justify-items-center lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-2 lg:gap-y-8">
+            <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-5 pt-5 justify-items-center lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-2 lg:gap-y-8" id="arrArticle">
                 <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between md:p-6">
                     <div class="relative group grow rounded-lg bg-secondaryLight p-3 shadow-md md:p-6 ">
-                        <time datetime="2025-09-20" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">20.09.2025</time>
+                        <time datetime="2025-09-20" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8" id="new-time">20.09.2025</time>
                         <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
-                            <a href="#">
+                            <a href="#" id="new-description">
                                 <span class="absolute inset-0"></span>
                                     В 2 раза быстрее водители могут съезжать с М9 "Балтия" на внешний МКАД благодаря переразметке ЦОДД...
                             </a>
                         </h3>
                         <div class="flex gap-1 flex-wrap">
-                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">ОДД</a>
-                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">МКАД</a><br>
-                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">М9 "Балтия"</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl" id="new-tagOne">ОДД</a>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl" id="new-tagTwo">МКАД</a><br>
+                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl" id="new-tagThree">М9 "Балтия"</a>
                         </div>
                     </div>
                     <div class="flex items-center justify-between w-full p-3 md:pt-6">
@@ -490,6 +490,115 @@
             </div>
         </div>
     </div>
+    <script>
 
+                // Function to load contact data from Strapi API
+        async function loadContactData() {
+            try {
+                console.log('Fetching contact data from http://localhost:1337/api/contacts...');
+                const response = await fetch(`http://localhost:1337/api/contacts?t=${Date.now()}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('Contact API response:', data);
+
+                if (data.data && data.data.length > 0) {
+                    const contact = data.data[0];
+                    console.log('Contact data:', contact);
+                    document.getElementById('director').textContent = contact.directorName || 'Не указано';
+                    document.getElementById('phone').textContent = formatPhoneNumber(contact.numberPhone);
+                    console.log('Updated director:', contact.directorName);
+                    console.log('Updated phone:', formatPhoneNumber(contact.numberPhone));
+                } else {
+                    console.error('No contact data found');
+                    document.getElementById('director').textContent = 'Ошибка загрузки';
+                    document.getElementById('phone').textContent = 'Ошибка загрузки';
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки contact данных:', error);
+                document.getElementById('director').textContent = 'Ошибка загрузки';
+                document.getElementById('phone').textContent = 'Ошибка загрузки';
+            }
+        }
+
+        // Function to load news data and prepend article cards
+        async function loadNewsData() {
+            try {
+                console.log('Fetching news data from http://localhost:1337/api/news...');
+                const response = await fetch(`http://localhost:1337/api/news?sort=updatedAt:desc&t=${Date.now()}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('News API response:', data);
+
+                const arrArticle = document.getElementById('arrArticle');
+                if (data.data && data.data.length > 0) {
+                    // Get existing article IDs to avoid duplicates
+                    const existingArticleIds = Array.from(arrArticle.querySelectorAll('article:not(:empty)'))
+                        .map(article => article.querySelector('h3 a[id^="new-description-"]')?.id.replace('new-description-', ''));
+
+                    // Loop through news entries and prepend only new ones
+                    data.data.forEach(news => {
+                        if (!existingArticleIds.includes(String(news.id))) {
+                            console.log('Processing news:', news);
+                            const articleHTML = `
+                                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between md:p-6">
+                                    <div class="relative group grow rounded-lg bg-secondaryLight p-3 shadow-md md:p-6">
+                                        <time datetime="${news.date}" class="font-sofia font-bold text-lg text-primaryDark rounded-br-xl px-3 py-1 absolute top-0 left-0 w-auto h-auto z-10 bg-secondaryLighterFull sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8">${news.date}</time>
+                                        <h3 class="mt-10 mb-5 text-md text-left font-narrow font-medium text-primaryDark sm:text-xl md:text-3xl md:mt-13 md:mb-8 lg:text-2xl">
+                                            <a href="#" id="new-description-${news.id}">
+                                                <span class="absolute inset-0"></span>
+                                                ${news.description}
+                                            </a>
+                                        </h3>
+                                        <div class="flex gap-1 flex-wrap">
+                                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">${news.tagOne}</a>
+                                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">${news.tagTwo}</a>
+                                            <a href="#" class="shadow-sm shadow-gray-400 relative z-10 rounded-full font-sofia font-medium text-md bg-secondaryLightest px-4 py-1 text-primaryDark hover:bg-secondaryLighterFull sm:text-xl md:text-3xl md:px-5 md:py-2 lg:text-2xl">${news.TagThree}</a>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between w-full p-3 md:pt-6">
+                                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"><a href="news1.html">Читать дальше</a></p>
+                                        <a href="news1.html"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-2xl/8 md:text-4xl/8 lg:text-3xl/8 hover:text-primary"></i></a>
+                                    </div>
+                                </article>
+                            `;
+                            arrArticle.insertAdjacentHTML('afterbegin', articleHTML);
+                            console.log(`Prepended article for news ID: ${news.id}`);
+                        } else {
+                            console.log(`Article for news ID: ${news.id} already exists, skipping`);
+                        }
+                    });
+
+                    // Add a new empty <article> at the end
+                    arrArticle.innerHTML += '<article></article>';
+                    console.log('Added new empty <article> to arrArticle');
+                } else {
+                    console.error('No news data found');
+                    arrArticle.innerHTML = '<p>Ошибка загрузки новостей</p>';
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки news данных:', error);
+                arrArticle.innerHTML = '<p>Ошибка загрузки новостей</p>';
+            }
+        }
+
+        // Load both contact and news data when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNewsData();
+        });
+    </script>
 </body>
 </html>

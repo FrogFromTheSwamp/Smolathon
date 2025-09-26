@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "directorName": {
+      "type": "text",
+      "default": "Гильденков Андрей Михайлович"
+    },
+    "numberPhone": {
+      "type": "integer",
+      "default": 74812339969
+    },
+    "address": {
+      "type": "text",
+      "default": "г. Смоленск, ул. Большая Краснофлотская, д. 70"
+    },
+    "hours": {
+      "type": "text",
+      "default": "Пн- Чт 08:00 - 17:00 Пт 08:00 - 15:00"
+    }
+  }
+}
