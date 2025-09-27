@@ -491,42 +491,6 @@
         </div>
     </div>
     <script>
-
-                // Function to load contact data from Strapi API
-        async function loadContactData() {
-            try {
-                console.log('Fetching contact data from http://localhost:1337/api/contacts...');
-                const response = await fetch(`http://localhost:1337/api/contacts?t=${Date.now()}`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                const data = await response.json();
-                console.log('Contact API response:', data);
-
-                if (data.data && data.data.length > 0) {
-                    const contact = data.data[0];
-                    console.log('Contact data:', contact);
-                    document.getElementById('director').textContent = contact.directorName || 'Не указано';
-                    document.getElementById('phone').textContent = formatPhoneNumber(contact.numberPhone);
-                    console.log('Updated director:', contact.directorName);
-                    console.log('Updated phone:', formatPhoneNumber(contact.numberPhone));
-                } else {
-                    console.error('No contact data found');
-                    document.getElementById('director').textContent = 'Ошибка загрузки';
-                    document.getElementById('phone').textContent = 'Ошибка загрузки';
-                }
-            } catch (error) {
-                console.error('Ошибка загрузки contact данных:', error);
-                document.getElementById('director').textContent = 'Ошибка загрузки';
-                document.getElementById('phone').textContent = 'Ошибка загрузки';
-            }
-        }
-
         // Function to load news data and prepend article cards
         async function loadNewsData() {
             try {

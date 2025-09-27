@@ -378,7 +378,7 @@
             <div class="mb-4 mx-auto max-w-7xl lg:mx-0">
                 <h2 class="text-3xl font-extrabold tracking-tight text-balance text-primary sm:text-7xl lg:text-6xl">Проекты</h2>
             </div>
-            <div class="mx-auto grid justify-items-center max-w-7xl grid-cols-1 gap-x-8 gap-y-6 sm:mt-10 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="mx-auto grid justify-items-center max-w-7xl grid-cols-1 gap-x-8 gap-y-6 sm:mt-10 lg:mx-0 lg:max-w-none lg:grid-cols-2" id="arrProject">
                 <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-primaryLighter flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3">
                     <div class="relative rounded-lg bg-primaryLight p-3 md:p-6">
                         <div class="">
@@ -580,77 +580,73 @@
         </div>
     </div>
     <script>
-        // Ensure DOM is fully loaded before initializing the map
-        document.addEventListener('DOMContentLoaded', () => {
-            // Phone number masking and validation
-            const phoneInput = document.getElementById('phone-number');
-            const phoneError = document.getElementById('phone-error');
-            const mask = IMask(phoneInput, {
-                mask: '+7 (000) 000-00-00'
-            });
+        // Function to load project data
+        async function loadProjectsData() {
+            try {
+                console.log('Fetching project data from http://localhost:1337/api/projects...');
+                const response = await fetch(`http://localhost:1337/api/projects?sort=updatedAt:desc&t=${Date.now()}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('Project API response:', data);
 
-            phoneInput.addEventListener('input', () => {
-                const isValid = mask.masked.isComplete;
-                phoneError.classList.toggle('hidden', isValid);
-            });
+                const arrProject = document.getElementById('arrProject');
+                if (data.data && data.data.length > 0) {
+                    const existingProjectIds = Array.from(arrProject.querySelectorAll('h3[id^="project-title-"]'))
+                        .map(h3 => h3.id.replace('project-title-', ''));
 
-            // Initialize OpenStreetMap centered on Smolensk
-            const map = L.map('map', {
-                center: [54.7818, 32.0401], // Smolensk coordinates
-                zoom: 12,
-                zoomControl: true,
-                attributionControl: true
-            });
-
-            // Add OSM tile layer with a fallback provider
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                maxZoom: 19,
-                tileSize: 256,
-                zoomOffset: 0
-            }).addTo(map);
-
-            // Add a draggable marker
-            const marker = L.marker([54.7818, 32.0401], { draggable: true }).addTo(map);
-
-            const addressInput = document.getElementById('address');
-            const addressDisplay = document.getElementById('address-display');
-
-            // Function to update address using Nominatim
-            function updateAddress(lat, lng) {
-                fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const address = data.display_name || 'Адрес не найден';
-                        addressDisplay.textContent = address;
-                        addressInput.value = JSON.stringify({ lat, lng, address });
-                    })
-                    .catch(() => {
-                        addressDisplay.textContent = 'Не удалось получить адрес';
-                        addressInput.value = JSON.stringify({ lat, lng });
+                    data.data.forEach(project => {
+                        if (!existingProjectIds.includes(String(project.id))) {
+                            console.log('Processing project:', project);
+                            const photoUrl = project.photo ? (project.photo.url ? `http://localhost:1337${project.photo.url}` : project.photo) : `/img/${encodeURI(project.title.toLowerCase().replace(/[\s+]/g, '-') + '.jpg')}`;
+                            const templateHTML = `
+                                <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 z-5 bg-primaryLighter flex max-w-7xl flex-col items-start justify-between md:p-6 lg:p-3">
+                                    <div class="relative rounded-lg bg-primaryLight p-3 md:p-6">
+                                        <div class="">
+                                            <div class="flex items-center justify-between absolute top-0 left-0 z-10 w-1/2 h-2/5 bg-primaryLighter rounded-br-3xl p-1 sm:h-3/5 md:h-80 md:p-3 lg:left-1/2 lg:h-70 lg:transform lg:-translate-x-1/2 lg:w-90 lg:rounded-bl-3xl">
+                                                <img src="img/${project.title}.jpg" alt="${project.title}" class="w-full h-full object-cover rounded-tl-3xl rounded-tr-lg rounded-br-3xl rounded-bl-lg">
+                                            </div>
+                                            <h3 class="font-sofia text-lg font-extrabold text-balance text-secondaryLightest text-left absolute top-0 right-0 w-1/2 h-1/3 pl-2 pt-2 sm:text-3xl md:text-6xl md:pl-5 md:pt-5 lg:text-4xl lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-70 lg:z-899 lg:w-full lg:text-center" id="project-title-${project.id}">
+                                                ${project.title}
+                                            </h3>
+                                        </div>
+                                        <h3 class="mt-20 mb-2 text-md leading-5 text-left font-narrow font-medium text-secondaryLightest sm:mt-45 sm:text-2xl sm:leading-none md:mt-85 md:text-4xl md:mb-5 lg:mb-3 lg:text-2xl">
+                                            ${project.description}
+                                        </h3>
+                                    </div>
+                                    <div class="flex items-center justify-between w-full p-2 md:p-6 lg:p-3">
+                                        <p class="font-sofia font-bold text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"><a href="https://www.admin-smolensk.ru/">Принять участие</a></p>
+                                        <a href="https://www.admin-smolensk.ru/"><i class="fa-solid fa-arrow-right text-xl text-primaryDark sm:text-3xl md:text-6xl lg:text-4xl hover:text-primary"></i></a>
+                                    </div>
+                                </article>
+                            `;
+                            arrProject.insertAdjacentHTML('afterbegin', templateHTML);
+                            console.log(`Prepended project for ID: ${project.id} with photo URL: ${photoUrl}`);
+                        } else {
+                            console.log(`Project for ID: ${project.id} already exists, skipping`);
+                        }
                     });
+
+                    arrProject.innerHTML += '<article></article>';
+                    console.log('Added new empty <article> to arrProject');
+                } else {
+                    console.error('No project data found');
+                    arrProject.innerHTML = '<p>Ошибка загрузки проектов</p>';
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки project данных:', error);
+                arrProject.innerHTML = '<p>Ошибка загрузки проектов</p>';
             }
-
-            // Update address on marker drag
-            marker.on('dragend', () => {
-                const { lat, lng } = marker.getLatLng();
-                updateAddress(lat, lng);
-            });
-
-            // Update address on map click
-            map.on('click', (e) => {
-                const { lat, lng } = e.latlng;
-                marker.setLatLng([lat, lng]);
-                updateAddress(lat, lng);
-            });
-
-            // Force map to redraw after initialization
-            setTimeout(() => {
-                map.invalidateSize();
-            }, 100);
-
-            // Initialize with default location
-            updateAddress(54.7818, 32.0401);
+        }
+        // Load all data when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProjectsData();
         });
     </script>
 </body>

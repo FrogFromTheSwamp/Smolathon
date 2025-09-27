@@ -146,7 +146,7 @@
                 Отдел анализа транспортных потоков
             </h3>
             <p class="text-sm text-left font-medium text-primaryDark sm:text-xl md:text-3xl lg:text-2xl">Это мозговой центр ЦОДД. Здесь данные превращаются в решения, которые разгружают магистрали и экономят время горожан.</p>
-            <div class="mx-auto flex max-w-7xl flex-col gap-10 w-full pt-5 justify-center sm:mt-1 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <div class="mx-auto flex max-w-7xl flex-col gap-10 w-full pt-5 justify-center sm:mt-1 lg:mx-0 lg:max-w-none lg:grid-cols-3" id="arrJobs">
                 <article class="shadow-sm rounded-xl pt-3 pr-3 pl-3 pb-3 bg-secondaryLighterFull flex max-w-7xl flex-col items-start justify-between w-full md:p-6">
                     <div class="relative group grow rounded-lg bg-secondaryLight p-3 max-w-7xl w-full md:p-5">
                         <h3 class="font-sofia font-bold text-lg text-primaryDark rounded-t-xl px-3 py-1 absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto z-10 bg-secondaryLighterFull hover:bg-secondaryLight sm:text-2xl md:text-5xl lg:text-4xl"><a href="docs.html">Узнать больше</a></h3>
@@ -243,6 +243,77 @@
             </div>
         </div>
     </div>
+
+    <script>
+                // Function to load document data and prepend template to arrDocs
+        async function loadDocumentsData() {
+            try {
+                console.log('Fetching document data from http://localhost:1337/api/docs...');
+                const response = await fetch(`http://localhost:1337/api/docs?sort=updatedAt:desc&t=${Date.now()}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('Document API response:', data);
+
+                const arrDocs = document.getElementById('arrDocs');
+                if (data.data && data.data.length > 0) {
+                    // Get existing document IDs to avoid duplicates
+                    const existingDocumentIds = Array.from(arrDocs.querySelectorAll('h3[id^="document-title-"]'))
+                        .map(h3 => h3.id.replace('document-title-', ''));
+
+                    // Loop through document entries and prepend only new ones
+                    data.data.forEach(doc => {
+                        if (!existingDocumentIds.includes(String(doc.id))) {
+                            console.log('Processing document:', doc);
+                            // Construct PDF URL (fallback if no pdf field exists)
+                            const pdfUrl = doc.pdf ? (doc.pdf.url ? `http://localhost:1337${doc.pdf.url}` : doc.pdf) : `docs/${doc.title.toLowerCase().replace(/[\s+]/g, '-')}.pdf`;
+                            const templateHTML = `
+                                <div class="document-entry">
+                                    <h3 class="mb-0.5 text-2xl font-sofia font-extrabold text-primaryDark sm:text-4xl md:text-6xl lg:mb-3 lg:text-5xl" id="document-title-${doc.id}">
+                                        ${doc.title}
+                                    </h3>
+                                    <div class="w-full mt-8 shadow-md rounded-xl p-1 bg-primaryDark max-w-md sm:mt-8 md:mt-12 hover:bg-primary">
+                                        <p class="text-xl text-center font-sofia font-medium text-secondaryLightest sm:text-3xl md:text-5xl lg:text-3xl">
+                                            <a href="${pdfUrl}">
+                                                Скачать
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            `;
+                            arrDocs.insertAdjacentHTML('afterbegin', templateHTML);
+                            console.log(`Prepended document for ID: ${doc.id}`);
+                        } else {
+                            console.log(`Document for ID: ${doc.id} already exists, skipping`);
+                        }
+                    });
+
+                    // Add an empty <article> at the end
+                    arrDocs.innerHTML += '<article></article>';
+                    console.log('Added new empty <article> to arrDocs');
+                } else {
+                    console.error('No document data found');
+                    arrDocs.innerHTML = '<p>Ошибка загрузки документов</p>';
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки document данных:', error);
+                arrDocs.innerHTML = '<p>Ошибка загрузки документов</p>';
+            }
+        }
+
+        
+
+        // Load contact, documents, and news data when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDocumentsData();
+        });
+    </script>
 
 </body>
 </html>

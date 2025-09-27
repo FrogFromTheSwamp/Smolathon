@@ -1,3 +1,4 @@
+
 module.exports = [
   'strapi::errors',
   'strapi::security',
@@ -5,7 +6,7 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://127.0.0.1:5500'], // можно ['*'] для теста
+      origin: process.env.CORS_ORIGIN.split(','),
     },
   },
   'strapi::poweredBy',
